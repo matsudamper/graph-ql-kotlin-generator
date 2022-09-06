@@ -1,4 +1,5 @@
 # Usage
+build.gradle.kts
 ```kotlin
 plugins {
     id("net.matsudamper.graphql.generator") version "<version>"
