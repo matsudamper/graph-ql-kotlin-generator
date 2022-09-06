@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "net.matsudamper.graphql.generator"
-version = "1.0-SNAPSHOT"
+version = System.getenv("VERSION")?.takeIf { it.isNotBlank() } ?: "1.0-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -61,4 +61,17 @@ gradlePlugin {
 val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
 compileKotlin.kotlinOptions {
     freeCompilerArgs = listOf("-Xinline-classes", "-Xjsr305=strict", "-Xexplicit-api=warning")
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/matsudamper/graphql-kotlin-generator")
+            credentials {
+                username = "matsudamper"
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }

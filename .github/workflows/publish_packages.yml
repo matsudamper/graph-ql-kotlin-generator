@@ -1,0 +1,23 @@
+name: Publish Maven Packages
+
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: publish
+        working-directory: ./generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${GITHUB_REF_NAME} GITHUB_TOKEN=$GITHUB_TOKEN ./gradlew publish
