@@ -24,6 +24,6 @@ val generateGraphqlCodeTask = tasks.create<net.matsudamper.graphql.generator.gra
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    dependsOn(generateQlTask)
+    dependsOn(generateGraphqlCodeTask)
 }
 ```
