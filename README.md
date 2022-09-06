@@ -1,4 +1,7 @@
-# Usage
+# GraphQL Kotlin Generator
+Genrate Kotlin code for [graphql-java](https://github.com/graphql-java/graphql-java) from schema file.
+
+# How to use
 build.gradle.kts
 ```kotlin
 plugins {
