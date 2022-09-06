@@ -35,26 +35,26 @@ dependencies {
     implementation("com.graphql-java:graphql-java-extended-scalars:17.0")
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "net.matsudamper.graphql.generator"
-            artifactId = "lib"
-            version = project.version.toString()
-            from(components["java"])
-        }
-    }
-}
-
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/matsudamper/graphql-kotlin-generator")
-            credentials {
-                username = "matsudamper"
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-}
+//publishing {
+//    publications {
+//        create<MavenPublication>("maven") {
+//            groupId = "net.matsudamper.graphql.generator"
+//            artifactId = "lib"
+//            version = project.version.toString()
+//            from(components["java"])
+//        }
+//    }
+//}
+//
+//publishing {
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            url = uri("https://maven.pkg.github.com/matsudamper/graphql-kotlin-generator")
+//            credentials {
+//                username = "matsudamper"
+//                password = System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
+//}
