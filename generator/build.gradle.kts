@@ -48,6 +48,11 @@ java {
     withSourcesJar()
 }
 
+val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    freeCompilerArgs = listOf("-Xinline-classes", "-Xjsr305=strict", "-Xexplicit-api=warning")
+}
+
 gradlePlugin {
     (plugins) {
         "net.matsudamper.graphql.generator.gradle.QlGradle" {
@@ -56,11 +61,6 @@ gradlePlugin {
             implementationClass = "net.matsudamper.graphql.generator.gradle.QlGradlePlugin"
         }
     }
-}
-
-val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    freeCompilerArgs = listOf("-Xinline-classes", "-Xjsr305=strict", "-Xexplicit-api=warning")
 }
 
 publishing {

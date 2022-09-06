@@ -25,6 +25,16 @@ java {
     withSourcesJar()
 }
 
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
+
+    implementation("com.graphql-java:graphql-java:17.3")
+    implementation("com.graphql-java:graphql-java-extended-validation:17.0")
+    implementation("com.graphql-java:graphql-java-extended-scalars:17.0")
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
@@ -34,16 +44,6 @@ publishing {
             from(components["java"])
         }
     }
-}
-
-dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin")
-
-    implementation("com.graphql-java:graphql-java:17.3")
-    implementation("com.graphql-java:graphql-java-extended-validation:17.0")
-    implementation("com.graphql-java:graphql-java-extended-scalars:17.0")
 }
 
 publishing {
