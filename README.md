@@ -2,13 +2,26 @@
 Genrate Kotlin code for [graphql-java](https://github.com/graphql-java/graphql-java) from schema file.
 
 # How to use
-build.gradle.kts
+
+<details>
+<summary>build.gradle.kts</summary>
+
 ```kotlin
 plugins {
     id("net.matsudamper.graphql.generator") version "<version>"
 }
 dependencies {
     implementation("net.matsudamper.graphql.generator:lib:<version>")
+}
+
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/matsudamper/graphql-kotlin-generator")
+        credentials {
+            username = "user_name"
+            password = System.getenv("GITHUB_TOKEN") // require read:packages Permission
+        }
+    }
 }
 
 val generateGraphqlCodeTask = tasks.create<net.matsudamper.graphql.generator.gradle.GenerateQlTask>("generateGraphqlCode") {
@@ -31,3 +44,25 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     dependsOn(generateGraphqlCodeTask)
 }
 ```
+
+</details>
+
+<details>
+<summary>settings.gradle</summary>
+
+```
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven {
+            url = uri("https://maven.pkg.github.com/matsudamper/graphql-kotlin-generator")
+            credentials {
+                it.username = "user_name"
+                it.password = System.getenv("GITHUB_TOKEN") // require read:packages Permission
+            }
+        }
+        gradlePluginPortal()
+    }
+}
+```
+</details>
