@@ -33,7 +33,7 @@ sourceSets["main"].java.setSrcDirs(
 )
 
 val generateGraphqlCodeTask = tasks.create<net.matsudamper.graphql.generator.gradle.GenerateQlTask>("generateGraphqlCode") {
-    files = file("$projectDir/src/main/resources/graphql").listFiles().orEmpty()
+    files = file("$projectDir/src/main/graphqls").listFiles().orEmpty()
         .filter { it.extension == "graphqls" }
     packageName = "base.package.name"
     outDir = file(generatedPath)
