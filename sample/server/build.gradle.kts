@@ -17,6 +17,14 @@ repositories {
 dependencies {
     implementation("net.matsudamper.graphql.generator:lib:1.0-SNAPSHOT")
     implementation("com.graphql-java:graphql-java:19.1")
+
+    implementation("org.eclipse.jetty:jetty-servlet:11.0.11")
+    implementation("org.eclipse.jetty:jetty-webapp:11.0.11")
+    implementation("org.glassfish.jersey.inject:jersey-hk2:3.0.8")
+    implementation("javax.servlet:servlet-api:2.5")
+
+    implementation("org.glassfish.jersey.containers:jersey-container-servlet:3.0.8")
+
     testImplementation(kotlin("test"))
 }
 
