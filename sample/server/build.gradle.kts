@@ -28,7 +28,7 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-val generatedPath = "src/main/kotlin"
+val generatedPath = "src/main/kotlin_generated"
 sourceSets["main"].java.setSrcDirs(
     listOf(
         "src/main/kotlin",
