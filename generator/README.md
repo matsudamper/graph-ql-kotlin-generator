@@ -1,4 +1,7 @@
-# Develop
+- build Java9+
+- run Java8+
+ 
+# Develop 
 ```shell
 ./gradlew publishToLocal
 ```
