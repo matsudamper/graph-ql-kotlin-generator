@@ -1,0 +1,22 @@
+schema {
+    query: Query
+}
+
+type Query {
+    timeline: TimelineContents
+    user(user: UserId!) : User
+}
+
+type User {
+    id: UserId!
+    postContent(id: UserPostContentId!): [UserPostContent!]!
+}
+
+type UserPostContent {
+    id: UserPostContentId!
+    text: String!
+    user: User! @lazy
+    createDateAt: Date!
+}
+
+union TimelineContents = User | UserPostContent
