@@ -18,8 +18,8 @@ import java.io.File
  */
 internal class QueryDefinitionBuilder(
     private val typeDefine: TypeDefinition,
-    private val queryName: String,
-    private val mutationName: String,
+    private val queryName: String?,
+    private val mutationName: String?,
 ) {
     fun writeTo(directory: File) {
         val types = typeDefine.objectType.values.toList()
@@ -39,8 +39,8 @@ internal class QueryDefinitionBuilder(
             append(type.name.take(1).toUpperCase())
             append(type.name.drop(1))
         }
-        val isMutation = type.name == mutationName
-        val isQuery = type.name == queryName
+        val isMutation = mutationName != null && type.name == mutationName
+        val isQuery = queryName != null && type.name == queryName
         val fields = GraphQlUtil.getFieldQueryTypes(type).map { fieldType ->
             val fieldKotlinName = buildString {
                 append("get")

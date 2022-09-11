@@ -99,8 +99,8 @@ internal class Main(
 
         QueryDefinitionBuilder(
             typeDefine = typeDefine,
-            mutationName = graphQLSchema.mutationType.name,
-            queryName = graphQLSchema.queryType.name,
+            mutationName = graphQLSchema.mutationType?.name,
+            queryName = graphQLSchema.queryType?.name,
         ).writeTo(outDir)
 
         FileSpec.builder(basePackage, "QlSchema")
