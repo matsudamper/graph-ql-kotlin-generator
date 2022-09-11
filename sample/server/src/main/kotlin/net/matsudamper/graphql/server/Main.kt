@@ -29,7 +29,7 @@ class Main {
 
                 server.requestLog = CustomRequestLog(
                     "logs/yyyy_mm_dd.access.log",
-                    "yyyyMMdd",
+                    """"%{client}a %u %{yyyy-MM-dd HH:mm:ss.SSS|UTC}t %r %s"""",
                 )
 
                 val resourceConfig = GraphQlAppResourceConfig()
