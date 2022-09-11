@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.7.10"
 }
 
-group = "org.example"
+group = "net.matsudamper.graphql.client"
 version = "1.0-SNAPSHOT"
 
 repositories {

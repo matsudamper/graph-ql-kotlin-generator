@@ -6,7 +6,7 @@ plugins {
     id("net.matsudamper.graphql.generator") version "1.0-SNAPSHOT"
 }
 
-group = "org.example"
+group = "net.matsudamper.graphql.server"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -37,7 +37,7 @@ sourceSets["main"].java.setSrcDirs(
 val generateGraphqlCodeTask = tasks.create<GenerateQlTask>("generateGraphqlCode") {
     files = file("$projectDir/src/main/graphqls").listFiles().orEmpty()
         .filter { it.extension == "graphqls" }
-    packageName = "net.matsudamper.graphql.generated"
+    packageName = "net.matsudamper.graphql.server.generated"
     outDir = file(generatedPath)
     scalarMap.putAll(
         mapOf(

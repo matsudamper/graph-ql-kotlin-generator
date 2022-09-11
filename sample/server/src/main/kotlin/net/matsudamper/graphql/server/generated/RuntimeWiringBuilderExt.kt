@@ -1,10 +1,10 @@
-package net.matsudamper.graphql.generated
+package net.matsudamper.graphql.server.generated
 
 import graphql.schema.DataFetchingEnvironment
 import graphql.schema.idl.RuntimeWiring
 import graphql.schema.idl.TypeRuntimeWiring
-import net.matsudamper.graphql.generated.type.QlUser
-import net.matsudamper.graphql.generated.type.QlUserPostContent
+import net.matsudamper.graphql.server.generated.type.QlUser
+import net.matsudamper.graphql.server.generated.type.QlUserPostContent
 
 public
     fun RuntimeWiring.Builder.setQuery(definitions: (env: DataFetchingEnvironment) -> QueryDefinitions):
