@@ -24,6 +24,7 @@ repositories {
     }
 }
 
+val generatedPath = "build/generated/graphql/main/kotlin"
 val generateGraphqlCodeTask = tasks.create<net.matsudamper.graphql.generator.gradle.GenerateQlTask>("generateGraphqlCode") {
     files = file("$projectDir/src/main/resources/graphql").listFiles().orEmpty()
         .filter { it.extension == "graphqls" }
