@@ -12,6 +12,7 @@ plugins {
 }
 dependencies {
     implementation("net.matsudamper.graphql.generator:lib:<version>")
+    implementation("com.graphql-java:graphql-java:<version>")
 }
 
 repositories {

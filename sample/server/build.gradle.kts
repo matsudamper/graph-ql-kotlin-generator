@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
     implementation("net.matsudamper.graphql.generator:lib:1.0-SNAPSHOT")
+    implementation("com.graphql-java:graphql-java:19.1")
     testImplementation(kotlin("test"))
 }
 
