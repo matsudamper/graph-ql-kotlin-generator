@@ -1,5 +1,6 @@
 # GraphQL Kotlin Generator
 Genrate Kotlin code for [graphql-java](https://github.com/graphql-java/graphql-java) from schema file.
+Does not depend on any specific framework.
 
 # How to use
 
